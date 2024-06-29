@@ -25,7 +25,7 @@ const Hero = () => {
             />
           </div>
           <div className="w-full md:w-2/5 md:pl-2">
-            <label htmlFor="property-type" className="sr-only">
+            <label htmlFor ="property-type" className="sr-only">
               Property Type
             </label>
             <select
