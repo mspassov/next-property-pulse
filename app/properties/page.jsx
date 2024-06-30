@@ -1,8 +1,11 @@
 import React from "react";
 import PropertyCard from "@/components/PropertyCard";
-import properties from "@/properties.json";
+//import properties from "@/properties.json";
+import { getProperties } from "@/utils/requests";
 
-const Properties = () => {
+const Properties = async () => {
+  const properties = await getProperties();
+
   return (
     <section className="px-4 py-6">
       <div className="container-xl lg:container m-auto px-4 py-6">
