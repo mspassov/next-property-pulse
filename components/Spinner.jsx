@@ -2,7 +2,7 @@
 import React from "react";
 import { ClipLoader } from "react-spinners";
 
-const LoadingPage = ({ loading }) => {
+const Spinner = ({ loading }) => {
   const override = {
     display: "block",
     margin: "100px auto",
@@ -19,4 +19,4 @@ const LoadingPage = ({ loading }) => {
   );
 };
 
-export default LoadingPage;
+export default Spinner;
