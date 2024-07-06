@@ -8,6 +8,7 @@ import { useParams } from "next/navigation";
 import Link from "next/link";
 import { FaArrowLeft } from "react-icons/fa";
 import Spinner from "@/components/Spinner";
+import PropertyGallery from "@/components/PropertyGallery";
 
 const SingleProperty = () => {
   const { id } = useParams();
@@ -143,6 +144,7 @@ const SingleProperty = () => {
               </div>
             </div>
           </section>
+          <PropertyGallery images={property.images} />
         </>
       )}
     </>
