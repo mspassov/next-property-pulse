@@ -62,10 +62,10 @@ const SingleProperty = () => {
 
                 {/* <!-- Sidebar --> */}
                 <aside className="space-y-4">
-                  <BookmarkButton property={property}/>
-                  <ShareButtons property={property}/>
+                  <BookmarkButton property={property} />
+                  <ShareButtons property={property} />
 
-                  <PropertyContactForm />
+                  <PropertyContactForm property={property} />
                 </aside>
               </div>
             </div>
