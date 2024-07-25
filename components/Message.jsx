@@ -2,10 +2,13 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { toast } from "react-toastify";
+import { useGlobalContext } from "@/context/GlobalContext";
 
 const Message = ({ message }) => {
   const [isRead, setIsRead] = useState(message.read);
   const [isDeleted, setIsDeleted] = useState(false);
+
+  const { setMsgCount } = useGlobalContext();
 
   const handleReadClick = async () => {
     try {
@@ -17,6 +20,7 @@ const Message = ({ message }) => {
         const data = await res.json();
         const { read } = data;
         setIsRead(read);
+        setMsgCount((prev) => (read ? prev - 1 : prev + 1));
         toast.success("Message updated");
       }
     } catch (error) {
@@ -33,6 +37,7 @@ const Message = ({ message }) => {
 
       if (res.status == 200) {
         setIsDeleted(true);
+        setMsgCount((prev) => prev - 1);
         toast.success("Message deleted");
       }
     } catch (error) {

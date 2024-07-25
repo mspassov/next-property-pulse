@@ -1,5 +1,6 @@
 import React from "react";
 import "@/assets/globals.css";
+import { GlobalProvider } from "@/context/GlobalContext";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AuthProvider from "@/components/AuthProvider";
@@ -13,16 +14,18 @@ export const metadata = {
 
 const MainLayout = ({ children }) => {
   return (
-    <AuthProvider>
-      <html lang="en">
-        <body>
-          <Navbar />
-          <main>{children}</main>
-          <Footer />
-          <ToastContainer />
-        </body>
-      </html>
-    </AuthProvider>
+    <GlobalProvider>
+      <AuthProvider>
+        <html lang="en">
+          <body>
+            <Navbar />
+            <main>{children}</main>
+            <Footer />
+            <ToastContainer />
+          </body>
+        </html>
+      </AuthProvider>
+    </GlobalProvider>
   );
 };
 

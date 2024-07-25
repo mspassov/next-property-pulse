@@ -1,9 +1,10 @@
 "use client";
 import React from "react";
 import { useState, useEffect } from "react";
+import { useGlobalContext } from "@/context/GlobalContext";
 
 const MessageAlert = ({ session }) => {
-  const [msgCount, setMsgCount] = useState(0);
+  const { msgCount, setMsgCount } = useGlobalContext();
 
   useEffect(() => {
     if (!session) {
