@@ -6,9 +6,9 @@ import Property from "@/models/Property";
 import { getProperties } from "@/utils/requests";
 
 const HomeProperties = async () => {
-  const properties = await getProperties();
+  const data = await getProperties();
 
-  const recentProperties = properties
+  const recentProperties = data.properties
     .sort(() => Math.random() - Math.random())
     .slice(0, 3);
 
